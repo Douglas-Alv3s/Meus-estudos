@@ -1,0 +1,72 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    function sorteia(){
+        return Math.round(Math.random() * 10);
+    }    
+
+    function sorteiaNumeros(quantidade){
+        var segredos = [];
+
+        var numero = 0;
+
+        while (numero < quantidade){
+
+            var numAleatorio = sorteia();
+
+            var existe = false;
+            
+            if(0 != numAleatorio){
+                for(var posicao = 0; posicao < segredos.length; posicao++){
+                    
+                    if (segredos[posicao] == numAleatorio){
+                        existe = true;
+                        break;
+                    }
+                }
+                if (existe == false){
+                    segredos.push(numAleatorio);
+                    numero++;
+                }
+            }
+
+        }
+        return segredos;
+    }
+
+    var listaSegredos = sorteiaNumeros(5);
+    console.log(listaSegredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+
+    function verificar(){
+
+        var achou = false;
+
+        for(var i=0; i < listaSegredos.length; i++)
+
+            if (input.value == listaSegredos[i]){
+                alert("Você ACERTOU o meu segredo!!!");
+                achou = true;
+                break;
+            }
+
+        if(achou == false){
+            alert("Você ERROU o meu segredo!!!");
+        }
+
+        input.value = "";
+        input.focus();
+    }
+    
+    var button = document.querySelector("button");
+    button.onclick = verificar; // Chamar função sem parenteses, realiza uma copia
+                                // do que está escrito na função para o butão.
+
+</script>

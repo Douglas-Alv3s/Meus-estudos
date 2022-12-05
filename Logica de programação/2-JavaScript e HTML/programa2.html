@@ -1,0 +1,26 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    
+
+
+    // Criando função para criar quadrados com bordas
+    function desenharQuadradoVerde(x, y, tamanho, cor){
+        //Atributos
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        //Desenhando quadrado verde
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho);
+
+        //Desenhando borda para o quadrado
+        pincel.fillStroke = "black";        // Definindo cor da borda
+        pincel.strokeRect(x, y, tamanho, tamanho);
+
+    }
+    
+    desenharQuadradoVerde(0,0,50, "green");
+    desenharQuadradoVerde(0,50,50, "yellow");
+
+</script>

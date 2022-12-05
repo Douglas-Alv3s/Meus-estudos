@@ -1,0 +1,33 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = "green";
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = "red";
+    pincel.fillRect(400, 0, 200, 400);
+
+
+    // Fazendo um triangulo
+    pincel.fillStyle = "yellow";
+    pincel.beginPath(); // Inicia a escrita do caminho
+    pincel.moveTo(300, 200); //Ponto central
+    pincel.lineTo(200, 400); //Segundo ponto
+    pincel.lineTo(400, 400); //Terceiro ponto
+    pincel.fill(); //Prencher triangulo
+
+    // Fazendo circulo
+    pincel.fillStyle = "blue";
+    pincel.beginPath();
+    pincel.arc(300, 200, 50, 0, 2* 3.14 ); //(X, Y, Tam. Raio, angulo incial,
+    pincel.fill();                         // algulo final em radiando)
+    
+
+</script>
