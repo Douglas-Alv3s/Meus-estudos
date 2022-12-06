@@ -1,0 +1,77 @@
+<canvas width="600" height="400"></canvas>
+
+
+<script> 
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0, 0, 600, 400);
+
+
+
+    var desenhar = false; //Vai informar se é para desenhar ou não
+    // Função habilitar e desativar desenho
+    function habilitaDesenhar(){
+        desenhar = true;
+    }
+
+    function desabilitarDesenhar(){
+        desenhar = false;
+    }
+
+
+    //
+    var cores = ["blue", "red", "green"];
+    var i = 0;
+    var tamanhoCirc = 10; 
+
+    function desenhaCirculo(evento){
+        
+        if(desenhar){
+            // Pega coordenada exata do click na tela
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            pincel.fillStyle = cores[i];
+            pincel.beginPath();
+            pincel.arc(x, y, tamanhoCirc,0 , 2* 3.14);
+            pincel.fill();
+        }
+        console.log(x+ ", "+ y)
+
+    
+        
+        // if (evento.shiftKey && tamanhoCirc <= 40){ //Verifica se a tecla Shift está sendo precionada
+        //         tamanhoCirc += 10;
+        // } else if(evento.altKey && tamanhoCirc >= 10){
+        //     tamanhoCirc -= 5;
+        // }
+    }
+
+
+    function mudarCor(){
+        // Ocorre o incremento do indice
+        i++;
+        
+        // Verifica se o indice passou de 3 ou se é igual a 3
+        // para voltar para situação defalt
+        if(i == cores.length){
+            i = 0;
+        } 
+        return false; // Para não abrir as opções da pagina, obrigatorio
+    }
+
+    // Botão direito responsavel por mudar a cor
+    tela.oncontextmenu = mudarCor;
+
+    //tela.onclick = desenhaCirculo; // -->Clicando na tela
+    tela.onmousemove = desenhaCirculo;
+
+    tela.onmousedown = habilitaDesenhar; // Identifica quando o mouse está apertado e se esta mantido
+    tela.onmouseup = desabilitarDesenhar; // Identifica quando o botao do mouse esquerdo é solto
+    
+   
+
+</script>
