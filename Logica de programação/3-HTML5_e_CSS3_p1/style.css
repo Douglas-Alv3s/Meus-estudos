@@ -93,6 +93,7 @@ footer {
     text-align: center;
     background: url("bg.jpg");
     padding: 40px 0;
+    
 }
 
 .copyright {
@@ -101,10 +102,6 @@ footer {
     margin-top: 20px;
 }
 
-main{
-    width: 1000px;
-    margin: 0 auto;
-}
 
 form{
     margin: 40px 0;
@@ -163,6 +160,7 @@ td, th {
 .beneficios{
     background: #FFFFFF;
     padding: 20px;
+    
 }
 
 /* css da página inicial */
@@ -176,6 +174,13 @@ td, th {
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
+}
+
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 .principal p {
@@ -195,7 +200,56 @@ td, th {
     float: left;
     margin: 0 2% 2% 0;
 }
+.mapa {
+    padding: 3em 0; 
+    background: linear-gradient(#FEFEFE, #888888)   
+}
 
-.imagembeneficios{
+.mapa-conteudo {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.beneficios {
+    padding: 3em 0;
+    background: #888888;
+}
+
+.conteudo-beneficios {
+    width: 64%;
+    margin: 0 auto;
+     
+}
+
+.lista-beneficios {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.itens {
+    line-height: 1.5;
+}
+
+.itens:before{
+    content: "🟊";
+}
+
+.itens:first-child {
+    font-weight: bold;
+}
+
+.imagem-beneficios{
     width: 60%;
 }
+
+.video {
+    width: 56%;
+    margin: 1em auto;
+}
+
