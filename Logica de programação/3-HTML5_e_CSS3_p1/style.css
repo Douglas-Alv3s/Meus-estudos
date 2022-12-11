@@ -22,6 +22,7 @@ nav{
 /* Mechendo com os itens da lista  */
 nav li{
     display: inline;
+    padding: 0 0 0 20px;
 }
 
 /* Mechendo com os links que estão na navegação */
@@ -31,6 +32,7 @@ nav a{
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
+
 }
 
 /* Interação de quando o mouse fica em cima do link  --> hover*/
@@ -58,6 +60,7 @@ nav a:hover {
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
+    border: 1px solid rgb(199, 13, 13);
 }
 
 .produtos li:hover { /* Função hover quando o mouse estiver em cima do elemento*/
@@ -245,6 +248,7 @@ td, th {
 
 .imagem-beneficios{
     width: 60%;
+    box-shadow: 10px 10px 10px 5px #000000
 }
 
 .video {
@@ -252,3 +256,20 @@ td, th {
     margin: 1em auto;
 }
 
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+}
