@@ -22,7 +22,6 @@ nav{
 /* Mechendo com os itens da lista  */
 nav li{
     display: inline;
-    margin: 0 0 0 15px;
 }
 
 /* Mechendo com os links que estão na navegação */
